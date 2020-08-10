@@ -1,0 +1,16 @@
+root=true
+
+[*]
+charset = utf-8
+
+[*.java]
+indent_style = space
+indent_size = 4
+
+[*.xml]
+indent_style = space
+indent_size = 4
+
+[*.yml]
+indent_style = space
+indent_size = 2
