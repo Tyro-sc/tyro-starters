@@ -1,6 +1,5 @@
 package sc.tyro.starter.junit4
 
-
 import org.junit.Before
 import org.junit.Test
 
