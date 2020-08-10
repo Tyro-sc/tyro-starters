@@ -1,12 +1,6 @@
 package sc.tyro.starter.junit4
 
-import io.github.bonigarcia.wdm.WebDriverManager
-import org.junit.After
-import org.junit.Before
-import org.junit.BeforeClass
-import org.junit.Test
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.firefox.FirefoxDriver
+import org.junit.*
 import org.openqa.selenium.firefox.FirefoxOptions
 import org.testcontainers.containers.BrowserWebDriverContainer
 import sc.tyro.web.WebBundle
@@ -15,31 +9,18 @@ import static sc.tyro.core.Tyro.*
 import static sc.tyro.starter.junit4.ComponentFactory.*
 
 class LoginPageTest {
-    private static WebDriver webDriver
-    private static BrowserWebDriverContainer browser
-    private static boolean isLocal = Boolean.valueOf(System.getProperty("local"))
+    @ClassRule
+    public static BrowserWebDriverContainer browser = new BrowserWebDriverContainer()
+            .withCapabilities(new FirefoxOptions());
 
     @BeforeClass
     static void setupClass() {
-        if (isLocal) {
-            WebDriverManager.firefoxdriver().setup()
-            webDriver = new FirefoxDriver()
-        } else {
-            browser = new BrowserWebDriverContainer()
-                    .withCapabilities(new FirefoxOptions())
-            browser.start()
-            webDriver = browser.webDriver
-        }
-        WebBundle.init(webDriver)
+        WebBundle.init(browser.webDriver)
     }
 
     @After
     void teardown() {
-        if (isLocal) {
-            webDriver.close()
-        } else {
-            browser.stop()
-        }
+        browser.stop()
     }
 
     @Before
@@ -85,4 +66,5 @@ class LoginPageTest {
             have value('123456')
         }
     }
+
 }
