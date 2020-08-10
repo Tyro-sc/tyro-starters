@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxOptions
 import org.testcontainers.containers.BrowserWebDriverContainer
 import org.testcontainers.containers.DefaultRecordingFileFactory
 import org.testcontainers.lifecycle.TestDescription
+import sc.tyro.web.WebBundle
 
 import static org.junit.jupiter.api.extension.ExtensionContext.Namespace.GLOBAL
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL
@@ -25,6 +26,8 @@ class WebdriverExtension implements BeforeEachCallback, AfterEachCallback {
         extensionContext
                 .getStore(GLOBAL)
                 .put(BrowserWebDriverContainer.class.getSimpleName(), container)
+
+        WebBundle.init(container.webDriver)
     }
 
     @Override
@@ -41,7 +44,7 @@ class WebdriverExtension implements BeforeEachCallback, AfterEachCallback {
             String getTestId() { return uniqueId; }
 
             @Override
-            String getFilesystemFriendlyName() { return name; }
+            String getFilesystemFriendlyName() { return name }
         }, Optional.empty());
 
         container.stop();
