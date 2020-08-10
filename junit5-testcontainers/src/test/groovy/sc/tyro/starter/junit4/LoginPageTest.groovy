@@ -1,6 +1,7 @@
 package sc.tyro.starter.junit4
 
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
@@ -15,6 +16,7 @@ class LoginPageTest {
     }
 
     @Test
+    @DisplayName("Should set the form")
     void form_test() {
         title.should { have text('Login Form') }
 

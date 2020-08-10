@@ -1,10 +1,11 @@
 package sc.tyro.starter.junit4
 
 import io.github.bonigarcia.wdm.WebDriverManager
-import org.junit.AfterClass
-import org.junit.Before
-import org.junit.BeforeClass
-import org.junit.Test
+import org.junit.jupiter.api.AfterAll
+import org.junit.jupiter.api.BeforeAll
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.firefox.FirefoxDriver
 import sc.tyro.web.WebBundle
@@ -15,24 +16,25 @@ import static sc.tyro.starter.junit4.ComponentFactory.*
 class LoginPageTest {
     private static WebDriver webDriver
 
-    @BeforeClass
+    @BeforeAll
     static void setupClass() {
         WebDriverManager.firefoxdriver().setup()
         webDriver = new FirefoxDriver()
         WebBundle.init(webDriver)
     }
 
-    @AfterClass
+    @AfterAll
     static void teardown() {
         webDriver.quit()
     }
 
-    @Before
+    @BeforeEach
     void setUp() {
         visit 'https://tyro-sc.github.io/tyro-starters/'
     }
 
     @Test
+    @DisplayName("Should set the form")
     void form_test() {
         title.should { have text('Login Form') }
 
