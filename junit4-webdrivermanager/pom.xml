@@ -16,7 +16,6 @@
 
         <!-- Tests -->
         <junit.version>4.13</junit.version>
-        <javalin.version>3.8.0</javalin.version>
         <tyro-web.version>1.0.0.RC1</tyro-web.version>
         <webdrivermanager.version>4.1.0</webdrivermanager.version>
         <selenium-java.version>3.141.59</selenium-java.version>
@@ -24,7 +23,6 @@
         <!-- Plugins -->
         <gmavenplus-plugin.version>1.10.0</gmavenplus-plugin.version>
     </properties>
-
 
     <build>
         <plugins>
