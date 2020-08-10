@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>sc.tyro.starters</groupId>
-    <artifactId>tyro-starter-junit4</artifactId>
+    <artifactId>tyro-starter-junit4-testcontainers</artifactId>
     <version>1.0.0</version>
-    <name>Tyro::Junit4</name>
+    <name>Tyro::Junit4 Test Containers</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,7 +19,6 @@
         <javalin.version>3.8.0</javalin.version>
         <tyro-web.version>1.0.0.RC1</tyro-web.version>
         <testcontainer.version>1.14.3</testcontainer.version>
-        <webdrivermanager.version>4.1.0</webdrivermanager.version>
         <selenium-java.version>3.141.59</selenium-java.version>
 
         <!-- Plugins -->
@@ -75,12 +74,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium-java.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
