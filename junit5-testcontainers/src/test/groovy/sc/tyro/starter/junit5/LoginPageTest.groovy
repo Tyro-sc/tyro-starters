@@ -5,6 +5,8 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
+import static sc.tyro.starter.junit5.ComponentFactory.*
+
 import static sc.tyro.core.Tyro.*
 
 @ExtendWith(WebdriverExtension.class)

@@ -1,7 +1,9 @@
 package sc.tyro.starter.junit5
 
+
+import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.AfterEachCallback
-import org.junit.jupiter.api.extension.BeforeEachCallback
+import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.openqa.selenium.firefox.FirefoxOptions
 import org.testcontainers.containers.BrowserWebDriverContainer
@@ -12,11 +14,11 @@ import sc.tyro.web.WebBundle
 import static org.junit.jupiter.api.extension.ExtensionContext.Namespace.GLOBAL
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL
 
-class WebdriverExtension implements BeforeEachCallback, AfterEachCallback {
+class WebdriverExtension implements BeforeAllCallback, AfterAllCallback, AfterEachCallback {
     static BrowserWebDriverContainer container
 
     @Override
-    void beforeEach(ExtensionContext extensionContext) throws Exception {
+    void beforeAll(ExtensionContext extensionContext) throws Exception {
         container = new BrowserWebDriverContainer()
                 .withCapabilities(new FirefoxOptions())
                 .withRecordingMode(RECORD_ALL, new File("./target/"))
@@ -28,6 +30,11 @@ class WebdriverExtension implements BeforeEachCallback, AfterEachCallback {
                 .put(BrowserWebDriverContainer.class.getSimpleName(), container)
 
         WebBundle.init(container.webDriver)
+    }
+
+    @Override
+    void afterAll(ExtensionContext extensionContext) throws Exception {
+        container.stop();
     }
 
     @Override
@@ -46,7 +53,5 @@ class WebdriverExtension implements BeforeEachCallback, AfterEachCallback {
             @Override
             String getFilesystemFriendlyName() { return name }
         }, Optional.empty());
-
-        container.stop();
     }
 }

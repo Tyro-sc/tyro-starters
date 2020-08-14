@@ -1,4 +1,4 @@
-package sc.tyro.starter.junit4
+package sc.tyro.starter.junit5
 
 import sc.tyro.bundle.html5.heading.H1
 import sc.tyro.bundle.html5.input.InputTypeEmail

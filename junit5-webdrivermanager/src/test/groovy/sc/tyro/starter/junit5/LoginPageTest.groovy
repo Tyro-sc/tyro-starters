@@ -1,17 +1,13 @@
-package sc.tyro.starter.junit4
+package sc.tyro.starter.junit5
 
 import io.github.bonigarcia.wdm.WebDriverManager
-import org.junit.jupiter.api.AfterAll
-import org.junit.jupiter.api.BeforeAll
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.*
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.firefox.FirefoxDriver
 import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
-import static sc.tyro.starter.junit4.ComponentFactory.*
+import static sc.tyro.starter.junit5.ComponentFactory.*
 
 class LoginPageTest {
     private static WebDriver webDriver
