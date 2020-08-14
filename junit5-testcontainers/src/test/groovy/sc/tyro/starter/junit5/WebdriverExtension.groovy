@@ -1,4 +1,4 @@
-package sc.tyro.starter.junit4
+package sc.tyro.starter.junit5
 
 import org.junit.jupiter.api.extension.AfterEachCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback

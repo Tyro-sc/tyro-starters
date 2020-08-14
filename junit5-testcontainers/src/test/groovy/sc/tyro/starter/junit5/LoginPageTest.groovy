@@ -1,4 +1,4 @@
-package sc.tyro.starter.junit4
+package sc.tyro.starter.junit5
 
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
 import static sc.tyro.core.Tyro.*
-import static sc.tyro.starter.junit4.ComponentFactory.*
 
 @ExtendWith(WebdriverExtension.class)
 class LoginPageTest {
