@@ -9,7 +9,7 @@ import static sc.tyro.starter.junit4.ComponentFactory.*
 class LoginPageTest extends BaseTest {
     @Before
     void setUp() {
-        visit 'https://tyro-sc.github.io/tyro-starters/'
+        visit 'https://tyro-sc.github.io/tyro-starters'
     }
 
     @Test
@@ -24,7 +24,6 @@ class LoginPageTest extends BaseTest {
         email_field.should {
             be visible
             be empty
-            have label('Email')
         }
 
         password_field.should {
@@ -33,7 +32,7 @@ class LoginPageTest extends BaseTest {
             have label('Password')
         }
 
-        language_dropdown.should {
+        dropdown('Language').should {
             be visible
             have 2.items
             have items('EN', 'FR')

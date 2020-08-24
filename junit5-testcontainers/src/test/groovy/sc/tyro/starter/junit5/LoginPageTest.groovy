@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 
 import static sc.tyro.core.Tyro.*
+import static sc.tyro.starter.junit5.ComponentFactory.*
 
 @ExtendWith(WebdriverExtension.class)
 class LoginPageTest {
@@ -36,7 +37,7 @@ class LoginPageTest {
             have label('Password')
         }
 
-        language_dropdown.should {
+        dropdown('Language').should {
             be visible
             have 2.items
             have items('EN', 'FR')

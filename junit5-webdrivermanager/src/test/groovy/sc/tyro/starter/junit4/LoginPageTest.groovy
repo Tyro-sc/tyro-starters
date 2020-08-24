@@ -55,7 +55,7 @@ class LoginPageTest {
             have label('Password')
         }
 
-        language_dropdown.should {
+        dropdown('Language').should {
             be visible
             have 2.items
             have items('EN', 'FR')
