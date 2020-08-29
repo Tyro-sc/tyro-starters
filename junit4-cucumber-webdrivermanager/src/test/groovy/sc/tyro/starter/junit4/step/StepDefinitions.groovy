@@ -14,7 +14,7 @@ import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
 
-class StepDefinition {
+class StepDefinitions {
     private static WebDriver webDriver
 
     @Before
