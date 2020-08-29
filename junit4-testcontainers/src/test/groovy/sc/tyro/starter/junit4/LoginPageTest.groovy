@@ -2,9 +2,12 @@ package sc.tyro.starter.junit4
 
 import org.junit.Before
 import org.junit.Test
+import sc.tyro.core.component.Dropdown
+import sc.tyro.core.component.field.EmailField
+import sc.tyro.core.component.field.PasswordField
 
 import static sc.tyro.core.Tyro.*
-import static sc.tyro.starter.junit4.ComponentFactory.*
+import static sc.tyro.starter.junit4.ComponentFactory.getForm
 
 class LoginPageTest extends BaseTest {
     @Before
@@ -14,39 +17,42 @@ class LoginPageTest extends BaseTest {
 
     @Test
     void form_test() {
-        title.should { have text('Login Form') }
+        heading('Login Form').should { be visible }
 
-        form.should {
-            be visible
-            contain(email_field, password_field, language_dropdown)
-        }
-
-        email_field.should {
+        EmailField email = field('Email')
+        email.should {
             be visible
             be empty
         }
 
-        password_field.should {
+        PasswordField password = field('Password')
+        password.should {
             be visible
             be empty
-            have label('Password')
         }
 
-        dropdown('Language').should {
+        Dropdown language = dropdown('Language')
+        language.should {
             be visible
             have 2.items
             have items('EN', 'FR')
+            have selectedItem('EN')
         }
 
-        fill email_field with 'my@email.org'
-        fill password_field with '123456'
+        fill email with 'my@email.org'
+        fill password with '123456'
 
-        email_field.should {
+        email.should {
             have value('my@email.org')
         }
 
-        password_field.should {
+        password.should {
             have value('123456')
+        }
+
+        form.should {
+            be visible
+            contain(email, password, language)
         }
     }
 }

@@ -32,7 +32,7 @@ class LoginPageTest {
 
     @Before
     void setUp() {
-        visit 'https://tyro-sc.github.io/tyro-starters/'
+        visit 'https://tyro-sc.github.io/tyro-starters'
     }
 
     @Test
@@ -56,6 +56,7 @@ class LoginPageTest {
             be visible
             have 2.items
             have items('EN', 'FR')
+            have selectedItem('EN')
         }
 
         fill email with 'my@email.org'
