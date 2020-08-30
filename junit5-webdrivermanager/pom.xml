@@ -21,11 +21,17 @@
         <selenium-java.version>3.141.59</selenium-java.version>
 
         <!-- Plugins -->
+        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <gmavenplus-plugin.version>1.10.0</gmavenplus-plugin.version>
     </properties>
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>

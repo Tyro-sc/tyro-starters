@@ -41,14 +41,11 @@ class LoginPageTest extends BaseTest {
 
         fill email with 'my@email.org'
         fill password with '123456'
+        on language select 'FR'
 
-        email.should {
-            have value('my@email.org')
-        }
-
-        password.should {
-            have value('123456')
-        }
+        email.should { have value('my@email.org') }
+        password.should { have value('123456') }
+        language.should { have selectedItem('FR') }
 
         form.should {
             be visible

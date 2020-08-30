@@ -1,4 +1,4 @@
-package sc.tyro.starter.junit5.step
+package sc.tyro.starter.junit5
 
 import io.cucumber.datatable.DataTable
 import io.cucumber.java.After
