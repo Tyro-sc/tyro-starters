@@ -16,7 +16,7 @@
 
         <!-- Tests -->
         <junit.version>4.13</junit.version>
-        <tyro-web.version>1.0.0.RC1</tyro-web.version>
+        <tyro-web.version>1.0.0.RC2</tyro-web.version>
         <testcontainer.version>1.14.3</testcontainer.version>
         <selenium-java.version>3.141.59</selenium-java.version>
 

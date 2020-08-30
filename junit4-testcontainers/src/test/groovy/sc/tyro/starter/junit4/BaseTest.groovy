@@ -39,7 +39,7 @@ class BaseTest {
 
             @Override
             String getFilesystemFriendlyName() { return name }
-        }, Optional.empty());
+        }, Optional.empty())
 
         container.webDriver.quit()
         container.stop()

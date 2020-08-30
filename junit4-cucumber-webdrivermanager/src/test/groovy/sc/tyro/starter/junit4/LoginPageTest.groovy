@@ -1,27 +1,41 @@
-package sc.tyro.starter.junit5
+package sc.tyro.starter.junit4
 
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
+import io.github.bonigarcia.wdm.WebDriverManager
+import org.junit.AfterClass
+import org.junit.Before
+import org.junit.BeforeClass
+import org.junit.Test
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.firefox.FirefoxDriver
 import sc.tyro.core.component.Dropdown
 import sc.tyro.core.component.field.EmailField
 import sc.tyro.core.component.field.PasswordField
-
-import static sc.tyro.starter.junit5.ComponentFactory.*
+import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
-import static sc.tyro.starter.junit5.ComponentFactory.getForm
+import static sc.tyro.starter.junit4.ComponentFactory.getForm
 
-@ExtendWith(WebdriverExtension.class)
 class LoginPageTest {
-    @BeforeEach
+    private static WebDriver webDriver
+
+    @BeforeClass
+    static void setupClass() {
+        WebDriverManager.firefoxdriver().setup()
+        webDriver = new FirefoxDriver()
+        WebBundle.init(webDriver)
+    }
+
+    @AfterClass
+    static void teardown() {
+        webDriver.quit()
+    }
+
+    @Before
     void setUp() {
-        visit 'https://tyro-sc.github.io/tyro-starters/'
+        visit 'https://tyro-sc.github.io/tyro-starters'
     }
 
     @Test
-    @DisplayName("Should set the form")
     void form_test() {
         heading('Login Form').should { be visible }
 
@@ -50,7 +64,7 @@ class LoginPageTest {
         on language select 'FR'
 
         email.should { have value('my@email.org') }
-        password.should { have value('123456') }
+        password.should { have value('123456')}
         language.should { have selectedItem('FR') }
 
         form.should {

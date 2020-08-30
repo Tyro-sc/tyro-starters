@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>sc.tyro.starters</groupId>
-    <artifactId>tyro-starter-junit4-webdrivermanager</artifactId>
+    <artifactId>tyro-starter-junit4-cucumber-webdrivermanager</artifactId>
     <version>1.0.0</version>
-    <name>Tyro::Junit4 WebDriver Manager</name>
+    <name>Tyro::Junit4 Cucumber WebDriver Manager</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,6 +19,7 @@
         <tyro-web.version>1.0.0.RC2</tyro-web.version>
         <webdrivermanager.version>4.1.0</webdrivermanager.version>
         <selenium-java.version>3.141.59</selenium-java.version>
+        <cucumber.version>6.5.0</cucumber.version>
 
         <!-- Plugins -->
         <gmavenplus-plugin.version>1.10.0</gmavenplus-plugin.version>
@@ -78,6 +79,18 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

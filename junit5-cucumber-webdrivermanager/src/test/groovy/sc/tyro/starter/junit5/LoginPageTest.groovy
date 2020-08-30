@@ -1,27 +1,41 @@
 package sc.tyro.starter.junit5
 
+import io.github.bonigarcia.wdm.WebDriverManager
+import org.junit.jupiter.api.AfterAll
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.firefox.FirefoxDriver
 import sc.tyro.core.component.Dropdown
 import sc.tyro.core.component.field.EmailField
 import sc.tyro.core.component.field.PasswordField
-
-import static sc.tyro.starter.junit5.ComponentFactory.*
+import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
 import static sc.tyro.starter.junit5.ComponentFactory.getForm
 
-@ExtendWith(WebdriverExtension.class)
 class LoginPageTest {
+    private static WebDriver webDriver
+
+    @BeforeAll
+    static void setupClass() {
+        WebDriverManager.firefoxdriver().setup()
+        webDriver = new FirefoxDriver()
+        WebBundle.init(webDriver)
+    }
+
+    @AfterAll
+    static void teardown() {
+        webDriver.quit()
+    }
+
     @BeforeEach
     void setUp() {
-        visit 'https://tyro-sc.github.io/tyro-starters/'
+        visit 'https://tyro-sc.github.io/tyro-starters'
     }
 
     @Test
-    @DisplayName("Should set the form")
     void form_test() {
         heading('Login Form').should { be visible }
 
