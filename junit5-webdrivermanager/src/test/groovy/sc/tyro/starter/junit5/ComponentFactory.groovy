@@ -1,4 +1,4 @@
-package sc.tyro.starter.junit4
+package sc.tyro.starter.junit5
 
 import sc.tyro.core.component.Form
 

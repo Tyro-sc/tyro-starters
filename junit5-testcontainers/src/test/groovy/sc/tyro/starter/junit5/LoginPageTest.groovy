@@ -8,6 +8,8 @@ import sc.tyro.core.component.Dropdown
 import sc.tyro.core.component.field.EmailField
 import sc.tyro.core.component.field.PasswordField
 
+import static sc.tyro.starter.junit5.ComponentFactory.*
+
 import static sc.tyro.core.Tyro.*
 import static sc.tyro.starter.junit5.ComponentFactory.getForm
 
