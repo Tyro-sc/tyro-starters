@@ -10,7 +10,7 @@ import sc.tyro.core.component.field.PasswordField
 import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
-import static sc.tyro.starter.junit4.ComponentFactory.getForm
+import static sc.tyro.starter.junit5.ComponentFactory.getForm
 
 class LoginPageTest {
     private static WebDriver webDriver
