@@ -1,34 +1,18 @@
 package sc.tyro.starter.junit4
 
-import io.github.bonigarcia.wdm.WebDriverManager
-import org.junit.AfterClass
 import org.junit.Before
-import org.junit.BeforeClass
+import org.junit.ClassRule
 import org.junit.Test
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.firefox.FirefoxDriver
 import sc.tyro.core.component.Dropdown
 import sc.tyro.core.component.field.EmailField
 import sc.tyro.core.component.field.PasswordField
-import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
 import static sc.tyro.starter.junit4.ComponentFactory.getForm
 
 class LoginPageTest {
-    private static WebDriver webDriver
-
-    @BeforeClass
-    static void setupClass() {
-        WebDriverManager.firefoxdriver().setup()
-        webDriver = new FirefoxDriver()
-        WebBundle.init(webDriver)
-    }
-
-    @AfterClass
-    static void teardown() {
-        webDriver.quit()
-    }
+    @ClassRule
+    public static TyroClassRule tyro = new TyroClassRule()
 
     @Before
     void setUp() {

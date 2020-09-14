@@ -1,35 +1,18 @@
 package sc.tyro.starter.junit5
 
-import io.github.bonigarcia.wdm.WebDriverManager
-import org.junit.jupiter.api.AfterAll
-import org.junit.jupiter.api.BeforeAll
+
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.firefox.FirefoxDriver
+import org.junit.jupiter.api.extension.ExtendWith
 import sc.tyro.core.component.Dropdown
 import sc.tyro.core.component.field.EmailField
 import sc.tyro.core.component.field.PasswordField
-import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
 import static sc.tyro.starter.junit5.ComponentFactory.getForm
 
+@ExtendWith(TyroExtension)
 class LoginPageTest {
-    private static WebDriver webDriver
-
-    @BeforeAll
-    static void setupClass() {
-        WebDriverManager.firefoxdriver().setup()
-        webDriver = new FirefoxDriver()
-        WebBundle.init(webDriver)
-    }
-
-    @AfterAll
-    static void teardown() {
-        webDriver.quit()
-    }
-
     @BeforeEach
     void setUp() {
         visit 'https://tyro-sc.github.io/tyro-starters'
