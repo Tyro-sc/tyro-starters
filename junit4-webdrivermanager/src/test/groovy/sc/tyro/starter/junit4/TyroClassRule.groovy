@@ -12,7 +12,7 @@ import static org.openqa.selenium.remote.BrowserType.FIREFOX
 
 class TyroClassRule extends ExternalResource {
     private static WebDriver webDriver
-    private static String browser;
+    private static String browser
 
     TyroClassRule(String browser) {
         TyroClassRule.browser = browser

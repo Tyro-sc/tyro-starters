@@ -1,10 +1,8 @@
 package sc.tyro.starter.junit4
 
-
 import org.junit.Before
 import org.junit.ClassRule
 import org.junit.Test
-import org.openqa.selenium.remote.BrowserType
 import sc.tyro.core.component.Dropdown
 import sc.tyro.core.component.field.EmailField
 import sc.tyro.core.component.field.PasswordField
