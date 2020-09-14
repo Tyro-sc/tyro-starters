@@ -5,9 +5,9 @@ import org.junit.rules.ExternalResource
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
-import org.openqa.selenium.remote.BrowserType
 import sc.tyro.web.WebBundle
 
+import static org.openqa.selenium.remote.BrowserType.CHROME
 import static org.openqa.selenium.remote.BrowserType.FIREFOX
 
 class TyroClassRule extends ExternalResource {
@@ -34,12 +34,11 @@ class TyroClassRule extends ExternalResource {
                 WebDriverManager.firefoxdriver().setup()
                 webDriver = new FirefoxDriver()
                 break
-            case BrowserType.CHROME:
+            case CHROME:
                 WebDriverManager.chromedriver().setup()
                 webDriver = new ChromeDriver()
                 break
         }
-
         WebBundle.init(webDriver)
     }
 
