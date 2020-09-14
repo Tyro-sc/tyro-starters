@@ -13,6 +13,7 @@ import org.testcontainers.lifecycle.TestDescription
 import sc.tyro.web.WebBundle
 
 import static org.junit.jupiter.api.extension.ExtensionContext.Namespace.GLOBAL
+import static org.openqa.selenium.remote.BrowserType.CHROME
 import static org.openqa.selenium.remote.BrowserType.FIREFOX
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL
 
@@ -36,7 +37,7 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback, AfterEachCal
             case FIREFOX:
                 container.withCapabilities(new FirefoxOptions())
                 break
-            case BrowserType.CHROME:
+            case CHROME:
                 container.withCapabilities(new ChromeOptions())
                 break
         }
@@ -66,10 +67,10 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback, AfterEachCal
 
         container.afterTest(new TestDescription() {
             @Override
-            String getTestId() { return uniqueId; }
+            String getTestId() { return uniqueId }
 
             @Override
             String getFilesystemFriendlyName() { return name }
-        }, Optional.empty());
+        }, Optional.empty())
     }
 }

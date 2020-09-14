@@ -5,7 +5,6 @@ import org.junit.runner.Description
 import org.junit.runners.model.Statement
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxOptions
-import org.openqa.selenium.remote.BrowserType
 import org.testcontainers.containers.BrowserWebDriverContainer
 import org.testcontainers.containers.DefaultRecordingFileFactory
 import org.testcontainers.lifecycle.TestDescription
@@ -38,7 +37,7 @@ class TyroClassRule implements TestRule {
         return new Statement() {
             @Override
             void evaluate() throws Throwable {
-                before();
+                before()
 
                 List<Throwable> errors = new ArrayList<Throwable>()
                 try {
