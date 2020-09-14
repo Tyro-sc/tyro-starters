@@ -40,7 +40,6 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback {
 
     @Override
     void afterAll(ExtensionContext extensionContext) throws Exception {
-        webDriver.close()
         webDriver.quit()
     }
 }
