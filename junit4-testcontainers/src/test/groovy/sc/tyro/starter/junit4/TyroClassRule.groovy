@@ -90,10 +90,7 @@ class TyroClassRule implements TestRule {
             String getFilesystemFriendlyName() { return description.displayName }
         }, Optional.empty())
 
-        container.webDriver.close()
         container.webDriver.quit()
         container.stop()
     }
-
-
 }
