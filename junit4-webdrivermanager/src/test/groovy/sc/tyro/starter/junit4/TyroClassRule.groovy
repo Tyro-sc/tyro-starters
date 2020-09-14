@@ -45,6 +45,7 @@ class TyroClassRule extends ExternalResource {
 
     @Override
     protected void after() {
+        webDriver.close()
         webDriver.quit()
     }
 }

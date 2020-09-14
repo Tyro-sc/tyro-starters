@@ -1,6 +1,7 @@
 package sc.tyro.starter.junit4
 
 import org.junit.Before
+import org.junit.ClassRule
 import org.junit.Test
 import sc.tyro.core.component.Dropdown
 import sc.tyro.core.component.field.EmailField
@@ -9,7 +10,10 @@ import sc.tyro.core.component.field.PasswordField
 import static sc.tyro.core.Tyro.*
 import static sc.tyro.starter.junit4.ComponentFactory.getForm
 
-class LoginPageTest extends BaseTest {
+class LoginPageTest {
+    @ClassRule
+    public static TyroClassRule tyro = new TyroClassRule()
+
     @Before
     void setUp() {
         visit 'https://tyro-sc.github.io/tyro-starters'
