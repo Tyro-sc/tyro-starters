@@ -12,6 +12,7 @@ import org.testcontainers.lifecycle.TestDescription
 import sc.tyro.web.WebBundle
 
 import static org.junit.runners.model.MultipleFailureException.assertEmpty
+import static org.openqa.selenium.remote.BrowserType.CHROME
 import static org.openqa.selenium.remote.BrowserType.FIREFOX
 import static org.testcontainers.containers.BrowserWebDriverContainer.VncRecordingMode.RECORD_ALL
 
@@ -65,7 +66,7 @@ class TyroClassRule implements TestRule {
             case FIREFOX:
                 container.withCapabilities(new FirefoxOptions())
                 break
-            case BrowserType.CHROME:
+            case CHROME:
                 container.withCapabilities(new ChromeOptions())
                 break
         }
