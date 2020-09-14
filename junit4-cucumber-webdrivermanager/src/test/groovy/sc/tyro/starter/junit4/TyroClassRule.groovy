@@ -1,19 +1,19 @@
 package sc.tyro.starter.junit4
 
-import io.github.bonigarcia.wdm.WebDriverManager
 import org.junit.rules.ExternalResource
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
-import org.openqa.selenium.remote.BrowserType
 import sc.tyro.web.WebBundle
 
+import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver
+import static io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver
 import static org.openqa.selenium.remote.BrowserType.CHROME
 import static org.openqa.selenium.remote.BrowserType.FIREFOX
 
 class TyroClassRule extends ExternalResource {
     private static WebDriver webDriver
-    private static String browser;
+    private static String browser
 
     TyroClassRule(String browser) {
         TyroClassRule.browser = browser
@@ -32,11 +32,11 @@ class TyroClassRule extends ExternalResource {
     protected void before() throws Throwable {
         switch (browser) {
             case FIREFOX:
-                WebDriverManager.firefoxdriver().setup()
+                firefoxdriver().setup()
                 webDriver = new FirefoxDriver()
                 break
             case CHROME:
-                WebDriverManager.chromedriver().setup()
+                chromedriver().setup()
                 webDriver = new ChromeDriver()
                 break
         }
