@@ -15,15 +15,15 @@
         <groovy.version>2.5.14</groovy.version>
 
         <!-- Tests -->
-        <junit.version>5.6.2</junit.version>
+        <junit.version>5.7.1</junit.version>
         <tyro-web.version>1.0.0.RC2</tyro-web.version>
-        <webdrivermanager.version>4.1.0</webdrivermanager.version>
+        <webdrivermanager.version>4.3.1</webdrivermanager.version>
         <selenium-java.version>3.141.59</selenium-java.version>
-        <cucumber.version>6.5.0</cucumber.version>
+        <cucumber.version>6.10.0</cucumber.version>
 
         <!-- Plugins -->
-        <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
-        <gmavenplus-plugin.version>1.10.0</gmavenplus-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <gmavenplus-plugin.version>1.12.1</gmavenplus-plugin.version>
     </properties>
 
     <build>
