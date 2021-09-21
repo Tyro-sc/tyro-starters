@@ -12,17 +12,17 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 
-        <groovy.version>2.5.14</groovy.version>
+        <groovy.version>2.5.15</groovy.version>
 
         <!-- Tests -->
-        <junit.version>5.7.1</junit.version>
-        <tyro-web.version>1.0.0.RC2</tyro-web.version>
+        <junit.version>5.8.0</junit.version>
+        <tyro-web.version>1.2.0</tyro-web.version>
         <testcontainer.version>1.15.2</testcontainer.version>
         <selenium-java.version>3.141.59</selenium-java.version>
 
         <!-- Plugins -->
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-        <gmavenplus-plugin.version>1.12.1</gmavenplus-plugin.version>
+        <gmavenplus-plugin.version>1.13.0</gmavenplus-plugin.version>
     </properties>
 
     <build>
