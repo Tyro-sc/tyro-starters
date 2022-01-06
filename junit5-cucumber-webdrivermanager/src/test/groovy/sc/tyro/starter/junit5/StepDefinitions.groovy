@@ -9,24 +9,25 @@ import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
 import io.github.bonigarcia.wdm.WebDriverManager
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.firefox.FirefoxDriver
 import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
 
 class StepDefinitions {
     private static WebDriver webDriver
+    private static WebDriverManager wdm
 
     @Before
-    void before() {
-        WebDriverManager.firefoxdriver().setup()
-        webDriver = new FirefoxDriver()
+    static void before() {
+        wdm = WebDriverManager.firefoxdriver()
+        webDriver = wdm.create()
         WebBundle.init(webDriver)
     }
 
     @After
-    void after() {
+    static void after() {
         webDriver.quit()
+        wdm.quit()
     }
 
     @Given("user visits our website")
@@ -48,7 +49,7 @@ class StepDefinitions {
     static void values(DataTable table) {
         table.cells().each {
             if (it.get(0) == 'Language') {
-                assert dropdown(it.get(0)).selectedItem().value() == (it.get(1) != null ? it.get(1) : '')
+                assert dropdown(it.get(0)).items().find { item -> item.selected() }.value() == it.get(1) != null ? it.get(1) : ''
             } else {
                 assert field(it.get(0)).value() == (it.get(1) != null ? it.get(1) : '')
             }

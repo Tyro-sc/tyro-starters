@@ -6,7 +6,6 @@ import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxOptions
-import org.openqa.selenium.remote.BrowserType
 import org.testcontainers.containers.BrowserWebDriverContainer
 import org.testcontainers.containers.DefaultRecordingFileFactory
 import org.testcontainers.lifecycle.TestDescription
