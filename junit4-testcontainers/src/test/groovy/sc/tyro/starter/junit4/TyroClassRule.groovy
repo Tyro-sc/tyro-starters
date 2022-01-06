@@ -19,10 +19,6 @@ class TyroClassRule implements TestRule {
     private static BrowserWebDriverContainer container
     private static String browser
 
-    TyroClassRule(String browser) {
-        TyroClassRule.browser = browser
-    }
-
     TyroClassRule() {
         // Add -DbrowserType=firefox/chrome/... to you VM Option to select the browser
         browser = System.getProperty("browserType")
