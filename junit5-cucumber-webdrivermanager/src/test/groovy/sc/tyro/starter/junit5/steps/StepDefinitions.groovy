@@ -1,35 +1,14 @@
-package sc.tyro.starter.junit5
+package sc.tyro.starter.junit5.steps
 
 import io.cucumber.datatable.DataTable
-import io.cucumber.java.After
-import io.cucumber.java.Before
 import io.cucumber.java.en.And
 import io.cucumber.java.en.Given
 import io.cucumber.java.en.Then
 import io.cucumber.java.en.When
-import io.github.bonigarcia.wdm.WebDriverManager
-import org.openqa.selenium.WebDriver
-import sc.tyro.web.WebBundle
 
 import static sc.tyro.core.Tyro.*
 
 class StepDefinitions {
-    private static WebDriver webDriver
-    private static WebDriverManager wdm
-
-    @Before
-    static void before() {
-        wdm = WebDriverManager.firefoxdriver()
-        webDriver = wdm.create()
-        WebBundle.init(webDriver)
-    }
-
-    @After
-    static void after() {
-        webDriver.quit()
-        wdm.quit()
-    }
-
     @Given("user visits our website")
     static void visit() {
         visit 'https://tyro-sc.github.io/tyro-starters'
