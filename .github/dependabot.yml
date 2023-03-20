@@ -4,6 +4,7 @@ updates:
     directory: "/junit5-cucumber-webdrivermanager"
     schedule:
       interval: daily
+
   - package-ecosystem: maven
     directory: "/junit5-webdrivermanager"
     schedule:
