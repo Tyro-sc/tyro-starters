@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    directory: "/junit5-cucumber-webdrivermanager"
+    schedule:
+      interval: daily
+
+  - package-ecosystem: maven
+    directory: "/junit5-webdrivermanager"
+    schedule:
+      interval: daily
