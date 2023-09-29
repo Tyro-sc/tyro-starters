@@ -26,7 +26,7 @@
 
         <!-- Plugins -->
         <maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
-        <gmavenplus-plugin.version>3.0.0</gmavenplus-plugin.version>
+        <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
     </properties>
 
     <dependencyManagement>
