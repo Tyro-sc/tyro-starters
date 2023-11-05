@@ -28,6 +28,8 @@ jobs:
         with:
           java-version: 11
           distribution: 'liberica'
-      - run: ./${{ matrix.module }}/mvnw clean package
+      - run: |
+          cd ${{ matrix.module }}
+          ./mvnw clean test
 
 
