@@ -10,18 +10,26 @@ import org.slf4j.LoggerFactory
 import sc.tyro.web.WebBundle
 
 import static io.github.bonigarcia.wdm.WebDriverManager.firefoxdriver
+import static java.lang.Boolean.valueOf
+import static java.lang.System.getenv
 
 class Hooks {
     private static final Logger LOGGER = LoggerFactory.getLogger(Hooks.class)
 
     private static WebDriver webDriver
     private static WebDriverManager wdm
+    private static boolean isCI = valueOf(getenv('CI'))
 
     @Before
     static void beforeScenario(Scenario scenario) {
         LOGGER.info("Scenario: " + scenario.getName() + " started")
 
         wdm = firefoxdriver()
+
+        if (isCI) {
+            wdm.browserInDocker()
+        }
+
         webDriver = wdm.create()
         WebBundle.init(webDriver)
     }

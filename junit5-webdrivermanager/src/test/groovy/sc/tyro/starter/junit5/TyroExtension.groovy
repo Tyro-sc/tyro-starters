@@ -7,9 +7,13 @@ import org.junit.jupiter.api.extension.ExtensionContext
 import org.openqa.selenium.WebDriver
 import sc.tyro.web.WebBundle
 
+import static java.lang.Boolean.valueOf
+import static java.lang.System.getenv
+
 class TyroExtension implements BeforeAllCallback, AfterAllCallback {
     private static WebDriver webDriver
     private static WebDriverManager wdm
+    private boolean isCI = valueOf(getenv('CI'))
 
     @Override
     void beforeAll(ExtensionContext extensionContext) throws Exception {
@@ -28,6 +32,11 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback {
                 wdm = WebDriverManager.chromedriver()
                 break
         }
+
+        if (isCI) {
+            wdm.browserInDocker()
+        }
+
         webDriver = wdm.create()
         WebBundle.init(webDriver)
     }
