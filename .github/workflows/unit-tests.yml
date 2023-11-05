@@ -1,0 +1,35 @@
+name: Run Unit Tests
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  modules:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module: [junit5-cucumber-webdrivermanager, junit5-webdrivermanager]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ matrix.module }}-${{ runner.os }}-maven-
+      - uses: actions/setup-java@v3
+        with:
+          java-version: 11
+          distribution: 'liberica'
+      - run: |
+          cd ${{ matrix.module }}
+          ./mvnw clean test
+
+
