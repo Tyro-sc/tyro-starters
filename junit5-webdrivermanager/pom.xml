@@ -9,16 +9,16 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 
-        <groovy.version>3.0.20</groovy.version>
+        <groovy.version>4.0.17</groovy.version>
 
         <!-- Tests -->
         <junit.version>5.10.1</junit.version>
         <cucumber.version>7.10.0</cucumber.version>
 
-        <tyro-web.version>1.6.0</tyro-web.version>
+        <tyro-web.version>1.7.0</tyro-web.version>
         <webdrivermanager.version>5.6.3</webdrivermanager.version>
         <selenium-java.version>4.16.1</selenium-java.version>
 
@@ -43,7 +43,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>org.apache.groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>${groovy.version}</version>
         </dependency>
