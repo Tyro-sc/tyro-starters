@@ -16,7 +16,7 @@
 
         <!-- Tests -->
         <junit.version>5.10.2</junit.version>
-        <cucumber.version>7.16.0</cucumber.version>
+        <cucumber.version>7.16.1</cucumber.version>
 
         <tyro-web.version>1.7.0</tyro-web.version>
         <webdrivermanager.version>5.7.0</webdrivermanager.version>
