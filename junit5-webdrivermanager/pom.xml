@@ -15,17 +15,14 @@
         <groovy.version>4.0.20</groovy.version>
 
         <!-- Tests -->
-        <junit.version>5.10.2</junit.version>
-        <cucumber.version>7.10.0</cucumber.version>
-
+        <junit.version>5.13.3</junit.version>
         <tyro-web.version>1.7.0</tyro-web.version>
-        <webdrivermanager.version>5.7.0</webdrivermanager.version>
-        <selenium-java.version>4.16.1</selenium-java.version>
+        <webdrivermanager.version>6.1.1</webdrivermanager.version>
 
         <slf4j.version>2.0.13</slf4j.version>
 
         <!-- Plugins -->
-        <maven-surefire-plugin.version>3.3.0</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
         <gmavenplus-plugin.version>3.0.2</gmavenplus-plugin.version>
     </properties>
 
@@ -58,12 +55,6 @@
             <groupId>sc.tyro</groupId>
             <artifactId>tyro-web</artifactId>
             <version>${tyro-web.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium-java.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>

@@ -23,10 +23,9 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback {
     @Override
     void beforeAll(ExtensionContext extensionContext) throws Exception {
         // Add -DbrowserType=firefox/chrome/... to you VM Option to select the browser
-        System.setProperty("webdriver.http.factory", "jdk-http-client")
         if (!browser) {
-            println "No browser selected. Use Firefox"
-            browser = "firefox"
+            println "No browser selected. Use Chrome"
+            browser = "chrome"
         }
 
         switch (browser) {
@@ -40,7 +39,7 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback {
             case "chrome":
                 wdm = chromedriver()
                 ChromeOptions options = new ChromeOptions()
-                options.addArguments("--start-fullscreen")
+                options.addArguments("--start-maximized")
                 wdm.capabilities(options)
                 break
             default:
