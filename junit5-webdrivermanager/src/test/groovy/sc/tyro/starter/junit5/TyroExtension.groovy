@@ -39,6 +39,7 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback {
             case "chrome":
                 wdm = chromedriver()
                 ChromeOptions options = new ChromeOptions()
+                options.addArguments("--start-maximized")
                 wdm.capabilities(options)
                 break
             default:

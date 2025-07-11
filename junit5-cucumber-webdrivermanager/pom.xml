@@ -19,9 +19,7 @@
         <cucumber.version>7.18.0</cucumber.version>
 
         <tyro-web.version>1.7.0</tyro-web.version>
-        <webdrivermanager.version>5.7.0</webdrivermanager.version>
-        <selenium-java.version>4.16.1</selenium-java.version>
-
+        <webdrivermanager.version>6.1.1</webdrivermanager.version>
         <slf4j.version>2.0.12</slf4j.version>
 
         <!-- Plugins -->
@@ -80,12 +78,6 @@
             <groupId>sc.tyro</groupId>
             <artifactId>tyro-web</artifactId>
             <version>${tyro-web.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium-java.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
