@@ -27,7 +27,6 @@ class Hooks {
     @Before
     static void beforeScenario(Scenario scenario) {
         LOGGER.info("Scenario: " + scenario.getName() + " started")
-        System.setProperty("webdriver.http.factory", "jdk-http-client")
 
         if (!browser) {
             println "No browser selected. Use Chrome"
@@ -45,7 +44,6 @@ class Hooks {
             case "chrome":
                 wdm = chromedriver()
                 ChromeOptions options = new ChromeOptions()
-                options.addArguments("--start-fullscreen")
                 wdm.capabilities(options)
                 break
             default:
