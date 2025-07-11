@@ -15,7 +15,7 @@
         <groovy.version>4.0.20</groovy.version>
 
         <!-- Tests -->
-        <junit.version>5.10.2</junit.version>
+        <junit.version>5.13.3</junit.version>
         <cucumber.version>7.10.0</cucumber.version>
 
         <tyro-web.version>1.7.0</tyro-web.version>

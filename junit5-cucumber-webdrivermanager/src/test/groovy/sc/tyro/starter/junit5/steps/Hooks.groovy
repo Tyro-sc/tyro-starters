@@ -30,8 +30,8 @@ class Hooks {
         System.setProperty("webdriver.http.factory", "jdk-http-client")
 
         if (!browser) {
-            println "No browser selected. Use Firefox"
-            browser = "firefox"
+            println "No browser selected. Use Chrome"
+            browser = "chrome"
         }
 
         switch (browser) {

@@ -25,8 +25,8 @@ class TyroExtension implements BeforeAllCallback, AfterAllCallback {
         // Add -DbrowserType=firefox/chrome/... to you VM Option to select the browser
         System.setProperty("webdriver.http.factory", "jdk-http-client")
         if (!browser) {
-            println "No browser selected. Use Firefox"
-            browser = "firefox"
+            println "No browser selected. Use Chrome"
+            browser = "chrome"
         }
 
         switch (browser) {
